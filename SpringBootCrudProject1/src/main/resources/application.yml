@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: default  # Default profile to be active
+  
+  application:
+    name: SpringBootCrudProject1  # Application name
+  
+  datasource:
+    url: jdbc:mysql://localhost:3306/springBootDemo  # Database URL
+    username: root  # Database username
+    password: Babu@123  # Database password
+    driver-class-name: com.mysql.cj.jdbc.Driver  # MySQL driver class
+  
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect  # Hibernate dialect for MySQL 8
+    hibernate:
+      ddl-auto: update  # Auto update schema as needed
+    show-sql: true  # Show SQL in the console
+    format_sql: true  # Format the SQL queries
+
+server:
+  port: 8080  # Application running port
+
+logging:
+  level:
+    root: INFO  # General logging level
+    com.techtez.springboot: DEBUG  # Detailed logging for your package
+  file:
+    name: logs/application.log  # Log file name (ensure 'logs' directory exists)
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"  # Console log pattern
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"  # File log pattern
